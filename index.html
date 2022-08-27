@@ -6,163 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
-    <link rel="icon" href="favicon (1).ico" type="image/x-icon">
-    <style>
-        body {
-            background-color: #f5f5f5;
-        }
-
-        div {
-            /* border: 1px solid black; */
-            text-align: center;
-        }
-
-        img {
-
-            margin: 10px;
-            border: 1px solid rgb(145, 138, 138)
-        }
-
-
-        form {
-            position: fixed;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            /* display: flex; */
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            height: 54px;
-            width: 100%;
-            display: flex;
-            align-items: center !important;
-            justify-content: space-around !important;
-            background-color: white;
-            border-bottom: 1px solid rgb(180, 179, 174);
-            position: fixed;
-
-        }
-
-        #search {
-            width: 215px;
-            height: 28px;
-            text-align: center;
-        }
-
-        #logo {
-            border: none;
-            height: 29px !important;
-            width: 103px !important;
-        }
-
-        header img {
-            height: 23px !important;
-            width: 23px !important;
-            margin: 0px 12px;
-            border: none
-        }
-
-        #vd {
-            border-radius: 50%;
-        }
-
-        .container {
-            width: 65%;
-            margin-top: 50px;
-            display: grid;
-            margin: auto;
-            align-items: center;
-            grid-template-columns: auto auto auto;
-        }
-
-
-
-        @keyframes slide {
-            from {
-                transform: translateY(-30px);
-            }
-
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .centered {
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-48%, -978%);
-        }
-
-        img:hover {
-            opacity: .7;
-        }
-    </style>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <div><a href="#ref"><img
-                    src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt=""
-                    id="logo"></div></a>
-        <div> <input type="text" name="" id="search" placeholder="Search"></div>
-        <div><a href="#ref"><img src="home.png" alt=""></a>
+        <div>
+            <a href="#ref">
+                <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt=""
+                    id="logo">
+            </a>
+        </div>
+        <div>
+            <input type="text" name="" id="search" placeholder="Search">
+        </div>
+        <div>
+            <a href="#ref"><img src="home.png" alt=""></a>
             <a href="#ref"><img src="telegram.png" alt=""></a>
             <a href="#ref"><img src="loupe.png" alt=""></a>
             <a href="#ref"><img src="heart.png" alt=""></a>
-            <a href="#ref"><img
-                    src="https://th.bing.com/th/id/OIP.JK1cryEdEm9gHiVT5djH7QHaHa?w=146&h=181&c=7&o=5&dpr=1.25&pid=1.7"
-                    alt="" id="vd"></a>
+            <a href="#ref">
+                <img src="https://th.bing.com/th/id/OIP.JK1cryEdEm9gHiVT5djH7QHaHa?w=146&h=181&c=7&o=5&dpr=1.25&pid=1.7"
+                    alt="" id="vd">
+            </a>
         </div>
     </header>
     <div style="height: 68px;" id="ref"></div>
     <section class="container">
 
     </section>
-    <script>
-        window.addEventListener('scroll', () => {
-            const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-            if (scrollTop + clientHeight > scrollHeight - 5) {
-                setTimeout(createPost, 0);
+    <script src="app.js"></script>
 
-            }
-        });
-        function post() {
-            let sec = document.querySelector("section")
-            for (i = 1; i <= 9; i++) {
-                let div = document.createElement("div")
-                let img = document.createElement("img")
-                let p = document.createElement("p")
-                img.src = `https://picsum.photos/300/300?random=${random()}`
-
-                p.classList.add("centered")
-
-                // p.innerText = "jhgfdxcvb"
-                div.appendChild(img)
-                div.appendChild(p)
-                sec.appendChild(div)
-            }
-        } post()
-
-        function createPost() {
-            post()
-        }
-        function random() {
-            let r = Math.ceil(Math.random() * 200)
-            return r
-        }
-    </script>
 </body>
 
 </html>
